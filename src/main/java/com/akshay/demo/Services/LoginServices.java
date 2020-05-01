@@ -1,5 +1,7 @@
 package com.akshay.demo.Services;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -20,5 +22,10 @@ public class LoginServices
 		loginEntity.setPassword(logindto.getPassword());
 		
 		return loginrepo.save(loginEntity);
+	}
+	
+	public Optional<LoginEntity> getEntity(String id)
+	{
+		return loginrepo.findById(id);
 	}
 }
