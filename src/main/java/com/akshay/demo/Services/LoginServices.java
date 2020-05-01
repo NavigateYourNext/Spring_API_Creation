@@ -13,12 +13,12 @@ public class LoginServices
 	@Autowired
 	LoginRepo loginrepo;
 	
-	public void postEntity(LoginDTO logindto)
+	public LoginEntity postEntity(LoginDTO logindto)
 	{
 		LoginEntity loginEntity = new LoginEntity();
 		loginEntity.setUsername(logindto.getUserid());
 		loginEntity.setPassword(logindto.getPassword());
 		
-		loginrepo.save(loginEntity);
+		return loginrepo.save(loginEntity);
 	}
 }
